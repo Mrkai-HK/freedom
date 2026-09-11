@@ -5,32 +5,45 @@ mode: rule
 log-level: info
 proxies:
 - name: 🇨🇿 CZ 01 - xiaohe
-  type: vmess
-  server: 195.85.23.225
-  port: 443
-  uuid: db50a20e-7ff5-4e70-948f-17cc9ca7c154
-  alterId: 0
-  cipher: auto
+  type: vless
+  server: 188.114.97.6
+  port: 8080
+  uuid: 0991a0c4-0ee5-4213-af89-7ad589f853f3
+  udp: true
+  tls: false
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /ELiV2-RAY----ELiV2-RAY----ELiV2-RAY----ELiV2-RAY----ELiV2-RAY----ELiV2-RAY?ed=2560
+    headers:
+      Host: elenaaaaaaaaaa.cloudns.pro
+- name: 🇨🇿 CZ 02 - xiaohe
+  type: vless
+  server: 172.67.170.140
+  port: 2053
+  uuid: ef23616d-8a9d-4b22-b2f5-9bda864de179
   udp: true
   tls: true
   skip-cert-verify: true
-  servername: renderer-stream-2-62.mirra.now
+  servername: INDEX.Arcane509.Workers.DEV
   network: ws
   ws-opts:
-    path: /api/v1/gpu-stream/socket
+    path: /
     headers:
-      Host: renderer-stream-2-62.mirra.now
+      Host: index.arcane509.workers.dev
 proxy-groups:
 - name: PROXIES
   type: select
   proxies:
   - AUTO
   - 🇨🇿 CZ 01 - xiaohe
+  - 🇨🇿 CZ 02 - xiaohe
 - name: AUTO
   type: url-test
   url: https://www.google.com/generate_204
   interval: 300
   proxies:
   - 🇨🇿 CZ 01 - xiaohe
+  - 🇨🇿 CZ 02 - xiaohe
 rules:
 - MATCH,PROXIES
