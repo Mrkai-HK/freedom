@@ -6,17 +6,17 @@ log-level: info
 proxies:
 - name: 🇯🇵 日本 (Japan) 01 (家宽) - xiaohe
   type: vless
-  server: 104.26.7.214
+  server: 104.17.21.32
   port: 8880
-  uuid: 4bf6fee9-d3c4-4a98-b83b-170bf37c669c
+  uuid: 63a1d550-f8da-456e-813c-398dd819e405
   udp: true
   tls: false
   skip-cert-verify: true
   network: ws
   ws-opts:
-    path: /
+    path: /pyip=ProxyIP.JP.CMLiussss.net
     headers:
-      Host: cold-water-945c.43-bc5.workers.dev
+      Host: noisy-cherry-b46b.206-866.workers.dev
 proxy-groups:
 - name: PROXIES
   type: select
